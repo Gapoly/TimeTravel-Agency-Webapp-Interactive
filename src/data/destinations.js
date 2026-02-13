@@ -1,3 +1,5 @@
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 export const destinations = [
   {
     id: 'paris-1889',
@@ -33,8 +35,8 @@ La Tour Eiffel, merveille d'ingénierie de 300 mètres, vient tout juste d'être
     price: '24 500',
     duration: '3 jours',
     difficulty: 'Accessible',
-    image: '/images/paris.png',
-    heroImage: '/images/paris.png',
+    image: `${BASE_URL}images/paris.png`,
+    heroImage: `${BASE_URL}images/paris.png`,
     color: '#c9a962',
     icon: '🗼'
   },
@@ -72,8 +74,8 @@ Notre expédition vous emmène dans ce monde primitif avec toutes les garanties 
     price: '89 000',
     duration: '5 jours',
     difficulty: 'Aventurier',
-    image: '/images/crétacé.png',
-    heroImage: '/images/crétacé.png',
+    image: `${BASE_URL}images/crétacé.png`,
+    heroImage: `${BASE_URL}images/crétacé.png`,
     color: '#5a8a6a',
     icon: '🦖'
   },
@@ -111,8 +113,8 @@ Léonard de Vinci travaille sur la Joconde dans son atelier, tandis que Raphaël
     price: '45 000',
     duration: '4 jours',
     difficulty: 'Culturel',
-    image: '/images/florense.png',
-    heroImage: '/images/florense.png',
+    image: `${BASE_URL}images/florense.png`,
+    heroImage: `${BASE_URL}images/florense.png`,
     color: '#a86a4a',
     icon: '🎨'
   }
