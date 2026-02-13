@@ -1,0 +1,548 @@
+.reservation {
+  position: relative;
+  padding: 8rem 0;
+  background: linear-gradient(180deg, var(--void-black) 0%, var(--obsidian) 100%);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.label::before,
+.label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-deep), transparent);
+}
+
+.label::before {
+  right: calc(100% + 1rem);
+}
+
+.label::after {
+  left: calc(100% + 1rem);
+  transform: rotate(180deg);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--pearl);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.accent {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.description {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: var(--silver);
+  line-height: 1.7;
+}
+
+/* Form container */
+.formContainer {
+  background: var(--charcoal);
+  border: 1px solid rgba(201, 169, 98, 0.15);
+  padding: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field.fullWidth {
+  grid-column: span 3;
+}
+
+.field label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+
+.field label svg {
+  color: var(--gold-deep);
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 1rem;
+  background: var(--obsidian);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--pearl);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--gold-deep);
+  background: rgba(201, 169, 98, 0.05);
+}
+
+.field select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b6b75' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+}
+
+.field select option {
+  background: var(--charcoal);
+  color: var(--pearl);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Counter */
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--obsidian);
+}
+
+.counter button {
+  width: 50px;
+  height: 52px;
+  background: transparent;
+  border: none;
+  color: var(--gold);
+  font-size: 1.25rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.counter button:hover:not(:disabled) {
+  background: var(--gold-glow);
+}
+
+.counter button:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.counter span {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--pearl);
+}
+
+/* Form footer */
+.formFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 3rem;
+  background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold) 50%, var(--gold-bright) 100%);
+  border: none;
+  color: var(--void-black);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  box-shadow: 0 10px 40px rgba(201, 169, 98, 0.3);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.note {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Loading animation */
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.loading span {
+  width: 6px;
+  height: 6px;
+  background: var(--void-black);
+  border-radius: 50%;
+  animation: loadingDots 1.4s infinite ease-in-out both;
+}
+
+.loading span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loadingDots {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Success state */
+.success {
+  text-align: center;
+  padding: 2rem;
+}
+
+.successIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(201, 169, 98, 0.15) 0%, rgba(201, 169, 98, 0.05) 100%);
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  color: var(--gold);
+}
+
+.success h3 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--pearl);
+  margin-bottom: 1rem;
+}
+
+.success p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--silver);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.confirmationNumber {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 3rem;
+  background: rgba(201, 169, 98, 0.1);
+  border: 1px solid rgba(201, 169, 98, 0.2);
+  margin-bottom: 2rem;
+}
+
+.confirmationNumber span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.confirmationNumber strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.resetButton {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--gold-deep);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.resetButton:hover {
+  background: var(--gold-glow);
+  border-color: var(--gold);
+}
+
+/* Background decorations */
+.bgGradient {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(201, 169, 98, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.bgPattern {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-image: radial-gradient(circle at 2px 2px, rgba(201, 169, 98, 0.03) 1px, transparent 0);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .formGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .field.fullWidth {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .reservation {
+    padding: 5rem 0;
+  }
+
+  .formContainer {
+    padding: 1.5rem;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .field.fullWidth {
+    grid-column: span 1;
+  }
+
+  .label::before,
+  .label::after {
+    display: none;
+  }
+
+  .submitButton {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .success h3 {
+    font-size: 1.75rem;
+  }
+
+  .successIcon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .confirmationNumber {
+    padding: 1rem 2rem;
+  }
+}
+
+/* AI Suggestions */
+.suggestionsBox {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: rgba(201, 169, 98, 0.05);
+  border: 1px solid rgba(201, 169, 98, 0.15);
+  overflow: hidden;
+}
+
+.suggestionsHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(201, 169, 98, 0.1);
+}
+
+.suggestionsHeader svg {
+  color: var(--gold);
+}
+
+.suggestionsHeader span {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.suggestionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.suggestionBtn {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background: var(--obsidian);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--silver);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-align: left;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.suggestionBtn:hover {
+  border-color: var(--gold-deep);
+  background: rgba(201, 169, 98, 0.08);
+  color: var(--pearl);
+}
+
+.suggestionIcon {
+  flex-shrink: 0;
+}
+
+.tipsSection {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(201, 169, 98, 0.1);
+}
+
+.tipsTitle {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.tipsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tipsList li {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--silver);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.tipsList li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--gold-deep);
+}
+
+@media (max-width: 600px) {
+  .suggestionsBox {
+    padding: 1rem;
+  }
+
+  .suggestionBtn {
+    padding: 0.75rem;
+    font-size: 0.8125rem;
+  }
+}

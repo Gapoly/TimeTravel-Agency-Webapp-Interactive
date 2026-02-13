@@ -1,0 +1,441 @@
+.detail {
+  min-height: 100vh;
+  background: var(--void-black);
+}
+
+.notFound {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: var(--pearl);
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 11, 0.3) 0%,
+    rgba(10, 10, 11, 0.5) 50%,
+    rgba(10, 10, 11, 1) 100%
+  );
+}
+
+.backButton {
+  position: absolute;
+  top: 8rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(10, 10, 11, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--pearl);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.backButton:hover {
+  border-color: var(--gold-deep);
+  color: var(--gold);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 5;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.heroEra {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(201, 169, 98, 0.1);
+  border: 1px solid rgba(201, 169, 98, 0.3);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  color: var(--pearl);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.heroSubtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 2rem;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.heroMeta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--silver);
+}
+
+.heroMeta svg {
+  color: var(--gold-deep);
+}
+
+.heroDecor {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.heroIcon {
+  font-size: 8rem;
+  opacity: 0.15;
+  filter: blur(2px);
+}
+
+/* Main content */
+.content {
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 4rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--pearl);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.sectionTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--gold), var(--gold-deep));
+}
+
+.descriptionText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.descriptionText p {
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: var(--silver);
+  line-height: 1.9;
+}
+
+/* Highlights */
+.highlightsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.highlightsList li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: rgba(26, 26, 29, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.highlightsList svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.highlightsList span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--pearl);
+}
+
+/* Activities */
+.activitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.activityCard {
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(26, 26, 29, 0.8) 0%, rgba(17, 17, 19, 0.8) 100%);
+  border: 1px solid rgba(201, 169, 98, 0.1);
+  transition: all 0.3s ease;
+}
+
+.activityCard:hover {
+  border-color: rgba(201, 169, 98, 0.25);
+  transform: translateY(-4px);
+}
+
+.activityIcon {
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.activityCard h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--pearl);
+  margin-bottom: 0.75rem;
+}
+
+.activityCard p {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--silver);
+  line-height: 1.7;
+}
+
+/* Booking card */
+.bookingCard {
+  position: sticky;
+  top: 6rem;
+  height: fit-content;
+  padding: 2rem;
+  background: var(--charcoal);
+  border: 1px solid rgba(201, 169, 98, 0.15);
+}
+
+.bookingHeader {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bookingLabel {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.bookingPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.priceValue {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--pearl);
+}
+
+.priceUnit {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.bookingDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bookingDetail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bookingDetail svg {
+  color: var(--gold-deep);
+}
+
+.bookingDetail > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.detailValue {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--pearl);
+}
+
+.bookingIncludes {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(201, 169, 98, 0.05);
+  border: 1px solid rgba(201, 169, 98, 0.1);
+}
+
+.bookingIncludes h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.bookingIncludes ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bookingIncludes li {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--silver);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.bookingIncludes li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--gold-deep);
+}
+
+.bookingButton {
+  width: 100%;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold) 50%, var(--gold-bright) 100%);
+  border: none;
+  color: var(--void-black);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bookingButton:hover {
+  box-shadow: 0 10px 40px rgba(201, 169, 98, 0.3);
+}
+
+.bookingNote {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .bookingCard {
+    position: static;
+  }
+
+  .heroDecor {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .backButton {
+    top: 6rem;
+    left: 1rem;
+  }
+
+  .heroContent {
+    padding: 2rem 1rem;
+  }
+
+  .heroMeta {
+    gap: 1rem;
+  }
+}
