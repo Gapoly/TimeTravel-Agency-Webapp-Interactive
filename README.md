@@ -53,6 +53,7 @@ Webapp interactive pour une agence de voyage temporel fictive de luxe, créée a
 
 | Usage | Outil | Modèle |
 |-------|-------|--------|
+| Maquette UI | v0.dev (Vercel) | - |
 | Développement code | Claude Code | Claude Opus 4.5 |
 | Chatbot intégré | Groq API | Llama 3.3 70B Versatile |
 
